@@ -1,221 +1,229 @@
-<html lang="pl"><head><link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsInRoZW1lX2NvbG9yIjoiIzEwMTMxNyIsImJhY2tncm91bmRfY29sb3IiOiIjMTAxMzE3IiwiZGlzcGxheSI6InN0YW5kYWxvbmUifQ==">
-    <base href="/dowodplska/">
-    <title>mObywatel</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="stylesheet" href="assets/app/main.css">
-    <link rel="stylesheet" href="assets/app/card.css">
-    <link rel="icon" type="image/x-icon" href="assets/app/logo.png">
-    <link rel="apple-touch-icon" href="assets/app/logo.png">
-    <link rel="shortcut icon" href="assets/app/logo.png">
-  <link type="text/css" rel="stylesheet" id="dark-mode-custom-link"><link type="text/css" rel="stylesheet" id="dark-mode-general-link"><style lang="en" type="text/css" id="dark-mode-custom-style"></style><style lang="en" type="text/css" id="dark-mode-native-style"></style><style lang="en" type="text/css" id="dark-mode-native-sheet"></style><style>:is([id*='google_ads_iframe'],[id*='taboola-'],.taboolaHeight,.taboola-placeholder,#top-ad,#credential_picker_container,#credentials-picker-container,#credential_picker_iframe,[id*='google-one-tap-iframe'],#google-one-tap-popup-container,.google-one-tap__module,.google-one-tap-modal-div,#amp_floatingAdDiv,#ez-content-blocker-container) {display:none!important;min-height:0!important;height:0!important;}</style></head>
-  <body>
-    
-    <div class="top_grid_fixed">
-      <div class="action_grid_fixed">
-        <img src="assets/app/images/back_blue.png" class="back_img_fixed" alt="">
-        <p onclick="sendTo('documents.html')" class="back_text_fixed">Wróć</p>
-      </div>
-      <p class="title_text_fixed">mDowód</p>
-      <img src="assets/app/images/help.png" class="help_img_fixed" alt="">
-    </div>
-  
-    <div class="bottom_bar">
-      <div class="bottom_bar_grid">
-        <div class="bottom_element_grid" send="documents.html">
-          <div class="bottom_element_image documents_open"></div>
-          <p class="bottom_element_text open">Dokumenty</p>
-        </div>
-        <div class="bottom_element_grid" send="services.html">
-          <div class="bottom_element_image services"></div>
-          <p class="bottom_element_text">Usługi</p>
-        </div>
-        <div class="bottom_element_grid" send="qr.html">
-          <div class="bottom_element_image qr"></div>
-          <p class="bottom_element_text">Kod QR</p>
-        </div>
-        <div class="bottom_element_grid" send="more.html">
-          <div class="bottom_element_image more"></div>
-          <p class="bottom_element_text">Więcej</p>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container">
-      <p class="time_text" id="time">Czas: 01:28:22 27.10.2025</p>
-  
-      <div class="id_wrapper">
-        <div class="id_image_data">
-          <img draggable="false" class="id_image" src="assets/app/images/plate.png" alt="">
-          <div class="inset"></div>
-  
-          <div class="id_own_image" style="background-image: url(&quot;data:text/html;base64,DQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCjwhRE9DVFlQRSBodG1sPg0KPGh0bWwgbGFuZz0icGwiPg0KPGhlYWQ+DQogICAgPHRpdGxlPkLFgsSFZCA0MDQ8L3RpdGxlPg0KICAgIDxtZXRhIGNoYXJzZXQ9IlVURi04Ij4NCiAgICA8bWV0YSBuYW1lPSJ2aWV3cG9ydCIgY29udGVudD0id2lkdGg9ZGV2aWNlLXdpZHRoLCBpbml0aWFsLXNjYWxlPTEiPg0KICAgIDxsaW5rIGhyZWY9Imh0dHBzOi8vZm9udHMuZ29vZ2xlYXBpcy5jb20vY3NzMj9mYW1pbHk9UG9wcGluczp3Z2h0QDQwMDs3MDAmZGlzcGxheT1zd2FwIiByZWw9InN0eWxlc2hlZXQiPg0KICAgIDxzdHlsZT4NCiAgICAgICAgYm9keSwgaHRtbCB7DQogICAgICAgICAgICBmb250LWZhbWlseTogJ1BvcHBpbnMnLCBBcmlhbCwgc2Fucy1zZXJpZjsNCiAgICAgICAgICAgIGZvbnQtc2l6ZTogMTVweDsNCiAgICAgICAgICAgIGNvbG9yOiAjNjY2Ow0KICAgICAgICAgICAgaGVpZ2h0OiAxMDAlOw0KICAgICAgICAgICAgbWFyZ2luOiAwOw0KICAgICAgICAgICAgcGFkZGluZzogMDsNCiAgICAgICAgICAgIGJveC1zaXppbmc6IGJvcmRlci1ib3g7DQogICAgICAgICAgICBiYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQodG8gcmlnaHQsIHJnYmEoMjQ3LCAyNDcsIDI0NywgMSkgNDUlLCByZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNTUpIDEwMCUpLCB1cmwoJy9wcm9zZXJ3ZXItY29tbW9uLWltYWdlcy9wcm9zZXJ3ZXJfY29tbW9uX2Vycm9yLndlYnAnKTsNCiAgICAgICAgICAgIGJhY2tncm91bmQtc2l6ZTogY292ZXI7DQogICAgICAgICAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7DQogICAgICAgICAgICBiYWNrZ3JvdW5kLXJlcGVhdDogbm8tcmVwZWF0Ow0KICAgICAgICAgICAgYmFja2dyb3VuZC1hdHRhY2htZW50OiBmaXhlZDsNCiAgICAgICAgfQ0KDQogICAgICAgIGEgew0KICAgICAgICAgICAgY29sb3I6ICMzQjU4OTU7DQogICAgICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7DQogICAgICAgIH0NCg0KICAgICAgICBhOmhvdmVyIHsNCiAgICAgICAgICAgIGNvbG9yOiAjRUY4OTAwOw0KICAgICAgICB9DQoNCiAgICAgICAgLmNvbnRlbnQtY29udGFpbmVyIHsNCiAgICAgICAgICAgIGRpc3BsYXk6IGZsZXg7DQogICAgICAgICAgICBtYXgtd2lkdGg6IDEyMDBweDsNCiAgICAgICAgICAgIG1hcmdpbjogMCBhdXRvOw0KICAgICAgICAgICAgYWxpZ24taXRlbXM6IGZsZXgtc3RhcnQ7DQogICAgICAgICAgICBwYWRkaW5nLWxlZnQ6IDIwcHg7DQogICAgICAgICAgICBwYWRkaW5nLXJpZ2h0OiAyMHB4Ow0KICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDUwJSk7DQogICAgICAgIH0NCg0KICAgICAgICBAbWVkaWEgKG1heC13aWR0aDogNTAwcHgpIHsNCiAgICAgICAgICAgIC5jb250ZW50LWNvbnRhaW5lciB7DQogICAgICAgICAgICAgICAgdHJhbnNmb3JtOiB0cmFuc2xhdGVZKDMwJSk7DQogICAgICAgICAgICB9DQogICAgICAgIH0NCg0KICAgICAgICAudGV4dC1ibG9jayB7DQogICAgICAgICAgICBtYXgtd2lkdGg6IDUwMHB4Ow0KICAgICAgICAgICAgd2lkdGg6IDEwMCU7DQogICAgICAgICAgICB0ZXh0LWFsaWduOiBqdXN0aWZ5Ow0KICAgICAgICB9DQoNCiAgICAgICAgLmVycm9yLXRpdGxlIHsNCiAgICAgICAgICAgIGZvbnQtc2l6ZTogNTBweDsNCiAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBib2xkOw0KICAgICAgICAgICAgY29sb3I6ICMwMDQ5OGU7DQogICAgICAgIH0NCg0KICAgICAgICAuZXJyb3ItZGVzY3JpcHRpb24gew0KICAgICAgICAgICAgZm9udC1zaXplOiAyMHB4Ow0KICAgICAgICAgICAgY29sb3I6ICM0MzQzNDM7DQogICAgICAgICAgICBtYXJnaW46IDIwcHggMDsNCiAgICAgICAgICAgIHRleHQtdHJhbnNmb3JtOiB1cHBlcmNhc2U7DQogICAgICAgIH0NCg0KICAgICAgICAuZXJyb3Itc3VnZ2VzdGlvbiB7DQogICAgICAgICAgICBmb250LXNpemU6IDE1cHg7DQogICAgICAgICAgICBjb2xvcjogIzQzNDM0MzsNCiAgICAgICAgfQ0KDQogICAgICAgIC5wcm9zZXJ3ZXItbG9nbyB7DQogICAgICAgICAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlOyANCiAgICAgICAgICAgIG1hcmdpbi1sZWZ0OiA1cHg7DQogICAgICAgICAgICB3aWR0aDogMTYwcHg7DQogICAgICAgIH0NCg0KICAgICAgICBAbWVkaWEgKG1heC13aWR0aDogNTAwcHgpIHsNCiAgICAgICAgICAgIC5wcm9zZXJ3ZXItbG9nbyB7DQogICAgICAgICAgICAgICAgd2lkdGg6IDE0MHB4Ow0KICAgICAgICAgICAgfQ0KICAgICAgICB9DQoNCiAgICAgICAgLmZvb3RlciB7DQogICAgICAgICAgICBtYXJnaW4tdG9wOiA1MHB4Ow0KICAgICAgICAgICAgZm9udC1zaXplOiAxNXB4Ow0KICAgICAgICAgICAgY29sb3I6ICM0MzQzNDM7DQogICAgICAgIH0NCiAgICA8L3N0eWxlPg0KICAgIDxzY3JpcHQ+DQogICAgICAgIGRvY3VtZW50LmFkZEV2ZW50TGlzdGVuZXIoIkRPTUNvbnRlbnRMb2FkZWQiLCBmdW5jdGlvbigpIHsNCiAgICAgICAgICAgIHZhciB1c2VyTGFuZyA9IG5hdmlnYXRvci5sYW5ndWFnZSB8fCBuYXZpZ2F0b3IudXNlckxhbmd1YWdlOyANCiAgICAgICAgICAgIGlmICghdXNlckxhbmcuc3RhcnRzV2l0aCgncGwnKSAmJiAhdXNlckxhbmcuc3RhcnRzV2l0aCgncGwtUEwnKSkgew0KICAgICAgICAgICAgICAgIGRvY3VtZW50LnRpdGxlID0gJzQwNCBOb3QgRm91bmQnOw0KICAgICAgICAgICAgICAgIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCd0eHQxJykudGV4dENvbnRlbnQgPSAnRXJyb3IgNDA0JzsNCiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndHh0MicpLnRleHRDb250ZW50ID0gJ05vdCBmb3VuZCc7DQogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3R4dDMnKS50ZXh0Q29udGVudCA9ICdPaCBubyEgVGhlIHBhZ2UgeW91IGFyZSBsb29raW5nIGZvciBkb2VzIG5vdCBleGlzdC4gSXTigJlzIHBvc3NpYmxlIHRoYXQgdGhlIFVSTCB3YXMgZW50ZXJlZCBpbmNvcnJlY3RseSwgdGhlIHBhZ2Ugd2FzIHJlbW92ZWQgb3IgbW92ZWQuIFBsZWFzZSBjaGVjayB0aGUgVVJMIG9yIHJldHVybiB0byB0aGUgaG9tZXBhZ2UuJzsNCiAgICAgICAgICAgICAgICANCiAgICAgICAgICAgICAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgndHh0NF9hJykudGV4dENvbnRlbnQgPSAnRm9yIG1vcmUgb24gdGhpcyBlcnJvciwgcGxlYXNlIHNlZSc7DQogICAgICAgICAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoJ3R4dDRfYicpLnRleHRDb250ZW50ID0gJ3RoaXMgZ3VpZGUnOw0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgICAgIA0KICAgICAgICAgICAgfQ0KICAgICAgICB9KTsNCiAgICA8L3NjcmlwdD4NCjwvaGVhZD4NCjxib2R5Pg0KICAgIDxkaXYgY2xhc3M9ImNvbnRlbnQtY29udGFpbmVyIj4NCiAgICAgICAgPGRpdiBjbGFzcz0idGV4dC1ibG9jayI+DQogICAgICAgICAgICA8ZGl2IGlkPSJ0eHQxIiBjbGFzcz0iZXJyb3ItdGl0bGUiPkLFgsSFZCA0MDQ8L2Rpdj4NCiAgICAgICAgICAgIDxwIGlkPSJ0eHQyIiBjbGFzcz0iZXJyb3ItZGVzY3JpcHRpb24iPk5pZSB6bmFsZXppb25vIHN0cm9ueTwvcD4NCiAgICAgICAgICAgIDxwIGlkPSJ0eHQzIiBjbGFzcz0iZXJyb3Itc3VnZ2VzdGlvbiI+T2plaiEgU3Ryb25hLCBrdMOzcmVqIHN6dWthc3osIG5pZSBpc3RuaWVqZS4gTW/FvGxpd2UsIMW8ZSBhZHJlcyBVUkwgem9zdGHFgiB3cGlzYW55IGLFgsSZZG5pZSwgc3Ryb25hIHpvc3RhxYJhIHVzdW5pxJl0YSBsdWIgcHJ6ZW5pZXNpb25hLiBTcHJhd2TFuiBhZHJlcyBVUkwgbHViIHdyw7PEhyBuYSBzdHJvbsSZIGfFgsOzd27EhS48L3A+DQogICAgICAgICAgICANCiAgICAgICAgICAgIDxwIGNsYXNzPSJlcnJvci1zdWdnZXN0aW9uIj48c3BhbiBpZD0idHh0NF9hIj5XacSZY2VqIG5hIHRlbWF0IHRlZ28gYsWCxJlkdSB6bmFqZHppZXN6IHc8L3NwYW4+IDxhIGlkPSJ0eHQ0X2IiIGhyZWY9Imh0dHBzOi8vcHJvc2Vyd2VyLnBsL2NlbnRydW0tcG9tb2N5L2RsYWN6ZWdvLW5hLXN0cm9uaWUtcG9qYXdpYS1zaWUtYmxhZC00MDQtbmllLXpuYWxlemlvbm8tc3Ryb255LyIgdGFyZ2V0PSJfYmxhbmsiPnR5bSBwb3JhZG5pa3U8L2E+LjwvcD4NCiAgICAgICAgICAgIA0KICAgICAgICAgICAgDQogICAgICAgIDwvZGl2Pg0KICAgIDwvZGl2Pg0KPC9ib2R5Pg0KPC9odG1sPg0K&quot;);">
-                    </div>
-  
-          <img draggable="false" src="assets/app/images/flag.webp" class="flag_video" alt="">
-          <img draggable="false" src="assets/app/images/eagle.png" class="eagle_video" alt="">
-          <p class="eagle_text">Rzeczpospolita<br>Polska</p>
-  
-          <div class="id_data_grid">
-            <div class="data_holder">
-              <p class="data_title firstname" id="name"></p>
-              <p class="data_value">Imię (imiona)</p>
-            </div>
-            <div class="data_holder">
-              <p class="data_title surname" id="surname"></p>
-              <p class="data_value">Nazwisko</p>
-            </div>
-            <div class="data_holder">
-              <p class="data_title" id="nationality"></p>
-              <p class="data_value">Obywatelstwo</p>
-            </div>
-            <div class="data_holder">
-              <p class="data_title" id="birthday"></p>
-              <p class="data_value">Data urodzenia</p>
-            </div>
-            <div class="data_holder">
-              <p class="data_title" id="pesel_value"></p>
-              <p class="data_value">Numer PESEL</p>
-            </div>
-          </div>
-        </div>
-  
-        <div class="id_bottom">
-          <div class="bottom_grid">
-            <img class="bottom_image" src="assets/app/images/valid.png" alt="">
-            <p class="bottom_text" style="color:#16be2d;font-weight:600;font-size:16px;margin-left:15px;">Dokument ważny</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="under_container">
-        <div class="under_grid">
-          <div class="under_icon" onclick="sendTo('scan.html', 'card.html')">
-            <div class="under_image_circle">
-              <img class="under_image" src="assets/app/images/confirm.png" alt="">
-            </div>
-            <p class="under_text">Potwierdź swoje dane</p>
-          </div>
-          <div class="under_icon" onclick="sendTo('document.html')">
-            <div class="under_image_circle">
-              <img class="under_image" src="assets/app/images/id_data.png" alt="">
-            </div>
-            <p class="under_text">Dane dowodu osobistego</p>
-          </div>
-          <div class="under_icon" onclick="sendTo('pesel.html')">
-            <div class="under_image_circle">
-              <img class="under_image" src="assets/app/images/lock.png" alt="">
-            </div>
-            <p class="under_text">Zastrzeż PESEL</p>
-          </div>
-          <div class="under_icon" onclick="sendTo('shortcuts.html')">
-            <div class="under_image_circle">
-              <img class="under_image" src="assets/app/images/more.png" alt="">
-            </div>
-            <p class="under_text">Pozostałe skróty</p>
-          </div>
-        </div>
-      </div>
-  
-      <div class="confirm_info">
-        <div class="confirm_box">
-          <p class="box_top">Seria i numer mDowodu</p>
-          <p class="box_value box_highlight" id="seriesAndNumber">OOGT 55115</p>
-          <button class="main_button_filled" onclick="navigator.clipboard.writeText(document.getElementById('seriesAndNumber').textContent)">Kopiuj</button>
-          <p class="box_description">Dane mDowodu i dowodu osobistego są inne - to dwa różne dokumenty.</p>
-        </div>
-        <div class="confirm_box">
-          <p class="box_top">Termin ważności</p>
-          <p class="box_value" id="expiryDate">11.04.2030</p>
-        </div>
-        <div class="confirm_box">
-          <p class="box_top">Data wydania</p>
-          <p class="box_value" id="givenDate">11.04.2025</p>
-        </div>
-        <div class="confirm_box">
-          <p class="box_top">Imię ojca</p>
-          <p class="box_value" id="fathersName"></p>
-        </div>
-        <div class="confirm_box" style="border:none;">
-          <p class="box_top">Imię matki</p>
-          <p class="box_value" id="mothersName"></p>
-        </div>
-      </div>
-  
-      <div class="other_grid">
-        <div class="bottom_holder info_holder">
-          <div class="bottom_grid">
-            <p class="bottom_text" style="margin-left:0px;">Twoje dodatkowe dane</p>
-          </div>
-          <img class="action_arrow" src="assets/app/images/arrow_white.png" alt="">
-          <div class="additional_holder">
-            <div class="additional_grid">
-              <p class="additional_title">Nazwisko rodowe</p>
-              <p class="additional_subtitle" id="familyName"></p>
-            </div>
-            <div class="additional_grid">
-              <p class="additional_title">Płeć</p>
-              <p class="additional_subtitle" id="sex"></p>
-            </div>
-            <div class="additional_grid">
-              <p class="additional_title">Nazwisko rodowe ojca</p>
-              <p class="additional_subtitle" id="fathersFamilyName"></p>
-            </div>
-            <div class="additional_grid">
-              <p class="additional_title">Nazwisko rodowe matki</p>
-              <p class="additional_subtitle" id="mothersFamilyName"></p>
-            </div>
-            <div class="additional_grid">
-              <p class="additional_title">Miejsce urodzenia</p>
-              <p class="additional_subtitle" id="birthPlace"></p>
-            </div>
-            <div class="additional_grid">
-              <p class="additional_title">Kraj urodzenia</p>
-              <p class="additional_subtitle" id="countryOfBirth"></p>
-            </div>
-            <div class="additional_grid">
-              <p class="additional_title">Adres zameldowania na pobyt stały</p>
-              <p class="additional_subtitle" id="adress"></p>
-            </div>
-            <div class="additional_grid" style="border-bottom:none;margin-bottom:0px;">
-              <p class="additional_title">Data zameldowania na pobyt stały</p>
-              <p class="additional_subtitle home_date">24.11.2013</p>
-            </div>
-          </div>
-        </div>
-  
-        <div class="bottom_holder" style="height:95px;margin-bottom:130px;">
-          <div class="bottom_update">
-            <div class="bottom_update_grid">
-              <p class="bottom_update_text" style="margin-left:0px;">Ostatnia aktualizacja</p>
-              <p class="bottom_update_value" style="margin-left:0px;">24.12.2024</p>
-            </div>
-            <button class="main_button_filled update" style="right:20px;" onclick="location.reload()">Aktualizuj</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  
-    <script src="assets/app/encode.js"></script>
-    <script src="assets/app/bar.js"></script>
-    <script src="assets/app/card.js"></script>
-    <script src="assets/app/manifest.js"></script>
-    <script src="assets/app/cache.js"></script>
-  
-    <script>
-      // Ostateczne wymuszenie PESEL po załadowaniu JS-ów
-      (function () {
-        var el = document.getElementById('pesel_value');
-        if (el) el.textContent = '';
-      })();
-    </script>
-  
-    
-  
+<html lang="pl">
+<head>
+  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsInRoZW1lX2NvbG9yIjoiIzEwMTMxNyIsImJhY2tncm91bmRfY29sb3IiOiIjMTAxMzE3IiwiZGlzcGxheSI6InN0YW5kYWxvbmUifQ==">
+  <base href="/dowodplska/">
+  <title>mObywatel</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" href="assets/app/main.css">
+  <link rel="stylesheet" href="assets/app/card.css">
+  <link rel="icon" type="image/x-icon" href="assets/app/logo.png">
+  <link rel="apple-touch-icon" href="assets/app/logo.png">
+  <link rel="shortcut icon" href="assets/app/logo.png">
+</head>
+<body>
 
-  </body></html>
+  <div class="top_grid_fixed">
+    <div class="action_grid_fixed">
+      <img src="assets/app/images/back_blue.png" class="back_img_fixed" alt="">
+      <p onclick="sendTo('documents.html')" class="back_text_fixed">Wróć</p>
+    </div>
+    <p class="title_text_fixed">mDowód</p>
+    <img src="assets/app/images/help.png" class="help_img_fixed" alt="">
+  </div>
+
+  <div class="bottom_bar">
+    <div class="bottom_bar_grid">
+      <div class="bottom_element_grid" send="documents.html">
+        <div class="bottom_element_image documents_open"></div>
+        <p class="bottom_element_text open">Dokumenty</p>
+      </div>
+      <div class="bottom_element_grid" send="services.html">
+        <div class="bottom_element_image services"></div>
+        <p class="bottom_element_text">Usługi</p>
+      </div>
+      <div class="bottom_element_grid" send="qr.html">
+        <div class="bottom_element_image qr"></div>
+        <p class="bottom_element_text">Kod QR</p>
+      </div>
+      <div class="bottom_element_grid" send="more.html">
+        <div class="bottom_element_image more"></div>
+        <p class="bottom_element_text">Więcej</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <p class="time_text" id="time">Czas: 01:28:22 27.10.2025</p>
+
+    <div class="id_wrapper">
+      <div class="id_image_data">
+        <img draggable="false" class="id_image" src="assets/app/images/plate.png" alt="">
+        <div class="inset"></div>
+
+        <div class="id_own_image" id="userPhoto" style="background-image:url('assets/app/images/blank.png');"></div>
+
+        <img draggable="false" src="assets/app/images/flag.webp" class="flag_video" alt="">
+        <img draggable="false" src="assets/app/images/eagle.png" class="eagle_video" alt="">
+        <p class="eagle_text">Rzeczpospolita<br>Polska</p>
+
+        <div class="id_data_grid">
+          <div class="data_holder">
+            <p class="data_title firstname" id="name"></p>
+            <p class="data_value">Imię (imiona)</p>
+          </div>
+          <div class="data_holder">
+            <p class="data_title surname" id="surname"></p>
+            <p class="data_value">Nazwisko</p>
+          </div>
+          <div class="data_holder">
+            <p class="data_title" id="nationality"></p>
+            <p class="data_value">Obywatelstwo</p>
+          </div>
+          <div class="data_holder">
+            <p class="data_title" id="birthday"></p>
+            <p class="data_value">Data urodzenia</p>
+          </div>
+          <div class="data_holder">
+            <p class="data_title" id="pesel_value"></p>
+            <p class="data_value">Numer PESEL</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="id_bottom">
+        <div class="bottom_grid">
+          <img class="bottom_image" src="assets/app/images/valid.png" alt="">
+          <p class="bottom_text" style="color:#16be2d;font-weight:600;font-size:16px;margin-left:15px;">Dokument ważny</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="under_container">
+      <div class="under_grid">
+        <div class="under_icon" onclick="sendTo('scan.html', 'card.html')">
+          <div class="under_image_circle">
+            <img class="under_image" src="assets/app/images/confirm.png" alt="">
+          </div>
+          <p class="under_text">Potwierdź swoje dane</p>
+        </div>
+        <div class="under_icon" onclick="sendTo('document.html')">
+          <div class="under_image_circle">
+            <img class="under_image" src="assets/app/images/id_data.png" alt="">
+          </div>
+          <p class="under_text">Dane dowodu osobistego</p>
+        </div>
+        <div class="under_icon" onclick="sendTo('pesel.html')">
+          <div class="under_image_circle">
+            <img class="under_image" src="assets/app/images/lock.png" alt="">
+          </div>
+          <p class="under_text">Zastrzeż PESEL</p>
+        </div>
+        <div class="under_icon" onclick="sendTo('shortcuts.html')">
+          <div class="under_image_circle">
+            <img class="under_image" src="assets/app/images/more.png" alt="">
+          </div>
+          <p class="under_text">Pozostałe skróty</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="confirm_info">
+      <div class="confirm_box">
+        <p class="box_top">Seria i numer mDowodu</p>
+        <p class="box_value box_highlight" id="seriesAndNumber"></p>
+        <button class="main_button_filled" onclick="navigator.clipboard.writeText(document.getElementById('seriesAndNumber').textContent)">Kopiuj</button>
+        <p class="box_description">Dane mDowodu i dowodu osobistego są inne - to dwa różne dokumenty.</p>
+      </div>
+      <div class="confirm_box">
+        <p class="box_top">Termin ważności</p>
+        <p class="box_value" id="expiryDate"></p>
+      </div>
+      <div class="confirm_box">
+        <p class="box_top">Data wydania</p>
+        <p class="box_value" id="givenDate"></p>
+      </div>
+      <div class="confirm_box">
+        <p class="box_top">Imię ojca</p>
+        <p class="box_value" id="fathersName"></p>
+      </div>
+      <div class="confirm_box" style="border:none;">
+        <p class="box_top">Imię matki</p>
+        <p class="box_value" id="mothersName"></p>
+      </div>
+    </div>
+
+    <div class="other_grid">
+      <div class="bottom_holder info_holder">
+        <div class="bottom_grid">
+          <p class="bottom_text" style="margin-left:0px;">Twoje dodatkowe dane</p>
+        </div>
+        <img class="action_arrow" src="assets/app/images/arrow_white.png" alt="">
+        <div class="additional_holder">
+          <div class="additional_grid">
+            <p class="additional_title">Nazwisko rodowe</p>
+            <p class="additional_subtitle" id="familyName"></p>
+          </div>
+          <div class="additional_grid">
+            <p class="additional_title">Płeć</p>
+            <p class="additional_subtitle" id="sex"></p>
+          </div>
+          <div class="additional_grid">
+            <p class="additional_title">Nazwisko rodowe ojca</p>
+            <p class="additional_subtitle" id="fathersFamilyName"></p>
+          </div>
+          <div class="additional_grid">
+            <p class="additional_title">Nazwisko rodowe matki</p>
+            <p class="additional_subtitle" id="mothersFamilyName"></p>
+          </div>
+          <div class="additional_grid">
+            <p class="additional_title">Miejsce urodzenia</p>
+            <p class="additional_subtitle" id="birthPlace"></p>
+          </div>
+          <div class="additional_grid">
+            <p class="additional_title">Kraj urodzenia</p>
+            <p class="additional_subtitle" id="countryOfBirth"></p>
+          </div>
+          <div class="additional_grid">
+            <p class="additional_title">Adres zameldowania na pobyt stały</p>
+            <p class="additional_subtitle" id="adress"></p>
+          </div>
+          <div class="additional_grid" style="border-bottom:none;margin-bottom:0px;">
+            <p class="additional_title">Data zameldowania na pobyt stały</p>
+            <p class="additional_subtitle home_date" id="homeDate"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom_holder" style="height:95px;margin-bottom:130px;">
+        <div class="bottom_update">
+          <div class="bottom_update_grid">
+            <p class="bottom_update_text" style="margin-left:0px;">Ostatnia aktualizacja</p>
+            <p class="bottom_update_value" id="updateDate" style="margin-left:0px;"></p>
+          </div>
+          <button class="main_button_filled update" style="right:20px;" onclick="location.reload()">Aktualizuj</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/app/encode.js"></script>
+  <script src="assets/app/bar.js"></script>
+  <script src="assets/app/card.js"></script>
+  <script src="assets/app/manifest.js"></script>
+  <script src="assets/app/cache.js"></script>
+
+  <script>
+    // === Wczytywanie danych z localStorage lub URL ===
+    const fields = [
+      'name','surname','nationality','birthday','pesel_value','seriesAndNumber','expiryDate',
+      'givenDate','fathersName','mothersName','familyName','sex','fathersFamilyName',
+      'mothersFamilyName','birthPlace','countryOfBirth','adress','homeDate','updateDate'
+    ];
+    const params = new URLSearchParams(window.location.search);
+    fields.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      let value = params.get(id) || localStorage.getItem(id);
+      if (value) el.textContent = value;
+    });
+    const photo = localStorage.getItem('userPhoto');
+    if (photo) document.getElementById('userPhoto').style.backgroundImage = `url(${photo})`;
+  </script>
+</body>
+</html>
