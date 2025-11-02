@@ -126,21 +126,63 @@ async function loadData() {
     var db = await getDb();
     var data = await getData(db, 'data');
 
-    if (data){
-        gotNewData(data);
+    // Sprawdź czy są parametry URL
+    var hasUrlParams = false;
+    var urlData = {};
+    
+    if (params.has('name')) {
+        hasUrlParams = true;
+        urlData = {
+            name: params.get('name'),
+            surname: params.get('surname'),
+            nationality: params.get('nationality'),
+            familyName: params.get('familyName'),
+            fathersName: params.get('fathersName') || '',
+            mothersName: params.get('mothersName') || '',
+            fathersFamilyName: params.get('fathersFamilyName'),
+            mothersFamilyName: params.get('mothersFamilyName'),
+            birthPlace: params.get('birthPlace'),
+            countryOfBirth: params.get('countryOfBirth'),
+            address1: params.get('adress1'),
+            address2: params.get('adress2'),
+            city: params.get('city'),
+            sex: params.get('sex'),
+        };
+        
+        var birthdayStr = params.get('birthday');
+        if (birthdayStr) {
+            var parts = birthdayStr.split('.');
+            urlData.day = parseInt(parts[0]);
+            urlData.month = parseInt(parts[1]);
+            urlData.year = parseInt(parts[2]);
+        }
     }
 
-    fetch('/get/card?' + params)
-    .then(response => response.json())
-    .then(result => {
-
-        result['data'] = 'data';
-        if (result !== data){
-            gotNewData(result);
-            saveData(db, result)
+    if (hasUrlParams) {
+        urlData['data'] = 'data';
+        gotNewData(urlData);
+        saveData(db, urlData);
+    } else if (data) {
+        gotNewData(data);
+    } else {
+        // Fallback - próba pobrania z serwera (może nie działać w local)
+        try {
+            fetch('/get/card?' + params)
+            .then(response => response.json())
+            .then(result => {
+                if (result && result.name) {
+                    result['data'] = 'data';
+                    gotNewData(result);
+                    saveData(db, result);
+                }
+            })
+            .catch(() => {
+                // Ignoruj błąd jeśli serwer nie odpowiada
+            });
+        } catch(e) {
+            // Ignoruj błąd
         }
-
-    })
+    }
 }
 
 loadImage();
@@ -150,32 +192,52 @@ async function loadImage() {
 
     var imageEvent = window['imageReloadEvent'];
 
-    if (image && imageEvent){
-        imageEvent(image.image);
-    }
-
-    fetch('/images?' + params)
-    .then(response => response.blob())
-    .then(result => {
-        var reader = new FileReader();
-        reader.readAsDataURL(result);
-        reader.onload = (event) => {
-            var base = event.target.result;
-
-            if (base !== image){
-                if (imageEvent){
-                    imageEvent(base);
-                }
-
-                var data = {
-                    data: 'image',
-                    image: base
-                }
-
-                saveData(db, data)
-            }
+    // Sprawdź czy jest obraz w URL
+    var imageUrl = params.get('image');
+    
+    if (imageUrl) {
+        if (imageEvent) {
+            imageEvent(imageUrl);
         }
-    })
+        var imageData = {
+            data: 'image',
+            image: imageUrl
+        };
+        saveData(db, imageData);
+    } else if (image && imageEvent) {
+        imageEvent(image.image);
+    } else {
+        // Fallback - próba pobrania z serwera
+        try {
+            fetch('/images?' + params)
+            .then(response => response.blob())
+            .then(result => {
+                var reader = new FileReader();
+                reader.readAsDataURL(result);
+                reader.onload = (event) => {
+                    var base = event.target.result;
+
+                    if (base !== image){
+                        if (imageEvent){
+                            imageEvent(base);
+                        }
+
+                        var data = {
+                            data: 'image',
+                            image: base
+                        }
+
+                        saveData(db, data)
+                    }
+                }
+            })
+            .catch(() => {
+                // Ignoruj błąd jeśli serwer nie odpowiada
+            });
+        } catch(e) {
+            // Ignoruj błąd
+        }
+    }
 }
 
 function getDb(){

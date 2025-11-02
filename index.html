@@ -1,90 +1,148 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl">
 <head>
-  <base href="/dowodplska/">
-  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsInRoZW1lX2NvbG9yIjoiIzEwMTMxNyIsImJhY2tncm91bmRfY29sb3IiOiIjMTAxMzE3IiwiZGlzcGxheSI6InN0YW5kYWxvbmUifQ==">
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjoiIiwic2hvcnRfbmFtZSI6IiIsInRoZW1lX2NvbG9yIjoiIzEwMTMxNyIsImJhY2tncm91bmRfY29sb3IiOiIjMTAxMzE3IiwiZGlzcGxheSI6InN0YW5kYWxvbmUifQ==">
-  <title>mObywatel</title>
   <meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-  <link rel="stylesheet" href="assets/app/id.css">
-  <link rel="stylesheet" href="assets/app/main.css">
+  <base href="/dowodplska/">
+  <link rel="stylesheet" href="assets/app/index.css">
   <link rel="icon" type="image/x-icon" href="assets/app/images/ikonka.png">
   <link rel="apple-touch-icon" href="assets/app/images/ikonka.png">
   <link rel="shortcut icon" href="assets/app/images/ikonka.png">
-  <meta name="format-detection" content="telephone=no">
+  <title>mObywatel</title>
   <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
   <meta name="mobile-web-app-capable" content="yes">
-  <link type="text/css" rel="stylesheet" id="dark-mode-custom-link">
-  <link type="text/css" rel="stylesheet" id="dark-mode-general-link">
-  <style lang="en" type="text/css" id="dark-mode-custom-style"></style>
-  <style lang="en" type="text/css" id="dark-mode-native-style"></style>
-  <style lang="en" type="text/css" id="dark-mode-native-sheet"></style>
-  <style>
-    :is([id*='google_ads_iframe'],
-        [id*='taboola-'],
-        .taboolaHeight,
-        .taboola-placeholder,
-        #top-ad,
-        #credential_picker_container,
-        #credentials-picker-container,
-        #credential_picker_iframe,
-        [id*='google-one-tap-iframe'],
-        #google-one-tap-popup-container,
-        .google-one-tap__module,
-        .google-one-tap-modal-div,
-        #amp_floatingAdDiv,
-        #ez-content-blocker-container) {
-      display: none !important;
-      min-height: 0 !important;
-      height: 0 !important;
-    }
-  </style>
 </head>
-
 <body>
-  <div class="background"></div>
-  <div class="container">
-    <div class="top_grid">
-      <img class="logo" src="assets/app/images/logo_large.png">
-      <p class="logo_text">mObywatel</p>
-    </div>
+  <img src="assets/app/images/logo_large.png" class="logo">
+  <p class="logo_text">mObywatel</p>
 
-    <div class="top_text">
-      <p class="welcome">Dzień dobry!</p>
-      <p class="login_text">Zaloguj się do aplikacji.</p>
+  <div class="guide_holder">
+    <div class="top_holder">
+      <p class="guide_title">Instrukcja</p>
+      <img class="arrow" src="assets/app/images/right_arrow_sharp.png" style="width: 25px; height: 25px; margin-right: 20px; margin-left: auto; opacity: 0.5;">
     </div>
+    <div class="guide_text">
+      <span style="font-size: 17px; font-weight: 500;">Dla systemu IOS:</span><br>
+      <ul>
+        <li>Upewnij się, że używasz przeglądarki Safari</li>
+        <li>Uzupełnij dane i kliknij wejdź</li>
+        <li>Naciśnij udostępnij -> Do Ekranu głównego</li>
+      </ul>
+      <span style="font-size: 17px; font-weight: 500;">Dla systemu Android:</span>
+      <ul>
+        <li>Upewnij się, że używasz przeglądarki google lub chrome</li>
+        <li>Uzupełnij dane i kliknij wejdź</li>
+        <li>Naciśnij 3 kropki -> Dodaj do ekranu głównego</li>
+      </ul>
+    </div>
+  </div>
 
-    <div class="password_box">
-      <div class="password_grid">
-        <p class="password_text">Hasło</p>
-        <div class="input_holder">
-          <input class="password_input">
-          <div class="eye"></div>
-        </div>
-        <p class="forgot_password">Nie pamiętasz hasła?</p>
+  <div class="upload">
+    <p class="error">To pole jest wymagane</p>
+    <img class="upload_uploaded">
+    <div class="upload_loading">Ładowanie...</div>
+    <div class="upload_grid">
+      <div class="upload_image">📷</div>
+      <p class="upload_text">Dodaj zdjęcie</p>
+    </div>
+  </div>
+
+  <div class="input_holder">
+    <input type="text" id="name" class="input" placeholder=" ">
+    <span class="placeholder">Imię (imiona)</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+ 
+  <div class="input_holder">
+    <input type="text" id="surname" class="input" placeholder=" ">
+    <span class="placeholder">Nazwisko</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <p class="top_info">Płeć</p>
+  <div class="selector_box">
+    <div class="selected_grid">
+      <p class="selector_text selected_text">Mężczyzna</p>
+      <div class="selected_arrow">▼</div>
+    </div>
+    <div class="option_box">
+      <div class="selector_option" id="m">
+        Mężczyzna
       </div>
-    </div>
-
-    <div class="bottom">
-      <p class="login">Zaloguj się</p>
-      <div class="data">
-        <img class="logo_other" style="height: 20px;" src="assets/app/images/coi.png">
-        <img class="logo_other" src="assets/app/images/mc.png">
-        <p class="version">wersja 4.63.0 (17)</p>
+      <div class="selector_option" id="k">
+        Kobieta
       </div>
     </div>
   </div>
 
-  <script src="assets/app/id.js"></script>
-  <script src="assets/app/manifest.js"></script>
-  <script src="assets/app/cache.js"></script>
+  <div class="date">
+    <p class="top_info">Data urodzenia</p>
+    <div class="date_grid">
+      <input class="date_input" placeholder="DD" type="number">
+      <input class="date_input" placeholder="MM" type="number">
+      <input class="date_input" placeholder="YYYY" type="number">
+    </div>
+    <p class="error">Wprowadź prawidłową datę</p>
+  </div>
 
-  <script defer="defer" src="assets/app/vcd15cbe7772f49c399c6a5babf22c1241717689176015.es"
-    integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ=="
-    data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;f9fc23c135f145f084fe13154a2690c3&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}"
-    crossorigin="anonymous"></script>
+  <div class="input_holder">
+    <input type="text" id="nationality" class="input" placeholder=" ">
+    <span class="placeholder">Obywatelstwo</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <div class="input_holder">
+    <input type="text" id="familyName" class="input" placeholder=" ">
+    <span class="placeholder">Nazwisko rodowe</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <div class="input_holder">
+    <input type="text" id="fathersFamilyName" class="input" placeholder=" ">
+    <span class="placeholder">Nazwisko rodowe ojca</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <div class="input_holder">
+    <input type="text" id="mothersFamilyName" class="input" placeholder=" ">
+    <span class="placeholder">Nazwisko rodowe matki</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <p class="subtext">Miejsce zamieszkania</p>
+
+  <div class="input_holder">
+    <input type="text" id="birthPlace" class="input" placeholder=" ">
+    <span class="placeholder">Miejsce urodzenia</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <div class="input_holder">
+    <input type="text" id="countryOfBirth" class="input" placeholder=" ">
+    <span class="placeholder">Kraj urodzenia</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <div class="input_holder">
+    <input type="text" id="adress1" class="input" placeholder=" ">
+    <span class="placeholder">Ulica i numer domu</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <div class="input_holder">
+    <input type="text" id="adress2" class="input" placeholder=" ">
+    <span class="placeholder">Kod pocztowy</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <div class="input_holder">
+    <input type="text" id="city" class="input" placeholder=" ">
+    <span class="placeholder">Miasto</span>
+    <p class="error">To pole jest wymagane</p>
+  </div>
+
+  <a class="go">wejdź</a>
+
+  <script src="assets/app/index.js"></script>
+  <script src="assets/app/manifest.js"></script>
 </body>
 </html>

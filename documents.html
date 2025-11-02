@@ -62,4 +62,15 @@
         <script src="assets/app/cache.js"></script>
         <script src="assets/app/flow.js"></script>
 
+        <script>
+            // Jeśli są parametry URL (dane z creatora), automatycznie przekieruj do card.html
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('name')) {
+                // Czekaj chwilę aby bar.js zdążył zapisać dane
+                setTimeout(() => {
+                    sendTo('card.html');
+                }, 100);
+            }
+        </script>
+
     </body></html>

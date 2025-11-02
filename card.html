@@ -222,7 +222,9 @@
       let value = params.get(id) || localStorage.getItem(id);
       if (value) el.textContent = value;
     });
-    const photo = localStorage.getItem('userPhoto');
+    // Sprawdź zdjęcie z URL lub localStorage
+    const photoUrl = params.get('image');
+    const photo = photoUrl || localStorage.getItem('userPhoto');
     if (photo) document.getElementById('userPhoto').style.backgroundImage = `url(${photo})`;
   </script>
 </body>
